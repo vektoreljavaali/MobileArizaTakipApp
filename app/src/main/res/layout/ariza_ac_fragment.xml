@@ -5,9 +5,125 @@
     android:layout_height="match_parent"
     tools:context=".ui.arizaac.ArizaAcFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="Personel Seçiniz..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/personelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textAlignment="textEnd"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:text="Tarih - Saat     "
+                android:layout_height="48dp"/>
+            <EditText
+                android:id="@+id/txttarih"
+                android:hint="Tarih"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
+                android:height="48dp" />
+            <EditText
+                android:id="@+id/txtsaat"
+                android:hint="Saat"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:height="48dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="Bildirim Şekli Seçiniz..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/bildirimturu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/txtarizatanimi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="48dp"
+                android:hint="ariza tanımı giriniz."/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="Öncelik Seçiniz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/oncelik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:gravity="center_vertical"
+                android:id="@+id/lblmakinasec"
+                android:hint="Arızalı Makineyi Seçiniz"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="8"/>
+            <ImageView
+                android:id="@+id/btnimagesearch"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:src="@mipmap/arizaac_search">
+
+            </ImageView>
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>
