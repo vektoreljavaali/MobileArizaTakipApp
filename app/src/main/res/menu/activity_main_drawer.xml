@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/anaSayfaFragment"
+            android:icon="@drawable/solmenu_anasayfa"
+            android:title="@string/solmenu_anasayfa" />
+        <item
+            android:id="@+id/arizaAcFragment2"
+            android:icon="@drawable/solmenu_arizaac"
+            android:title="@string/solmenu_arizaac" />
+        <item
+            android:id="@+id/cihazTanimlamaFragment"
+            android:icon="@drawable/solmenu_arizaac"
+            android:title="@string/solmenu_cihaztanimlama" />
+        <item
+            android:id="@+id/arizaListesiFragment"
+            android:icon="@drawable/solmenu_arizalistesi"
+            android:title="@string/solmenu_arizalistesi" />
+        <item
+            android:id="@+id/cihazListesiFragment"
+            android:icon="@drawable/solmenu_arizalistesi"
+            android:title="@string/solmenu_cihazlistesi" />
+
+    </group>
+</menu>

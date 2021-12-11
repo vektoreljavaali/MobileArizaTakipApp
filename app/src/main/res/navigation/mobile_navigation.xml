@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/cihazTanimlamaFragment"
+        android:name="com.example.deneme.ui.cihaztanimlama.CihazTanimlamaFragment"
+        android:label="cihaz_tanimlama_fragment"
+        tools:layout="@layout/cihaz_tanimlama_fragment" />
+    <fragment
+        android:id="@+id/cihazListesiFragment"
+        android:name="com.example.deneme.ui.cihazlistesi.CihazListesiFragment"
+        android:label="cihaz_listesi_fragment"
+        tools:layout="@layout/cihaz_listesi_fragment" />
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.deneme.ui.anasayfa.AnaSayfaFragment"
+        android:label="ana_sayfa_fragment"
+        tools:layout="@layout/ana_sayfa_fragment" />
+    <fragment
+        android:id="@+id/arizaAcFragment2"
+        android:name="com.example.deneme.ui.arizaac.ArizaAcFragment"
+        android:label="ariza_ac_fragment"
+        tools:layout="@layout/ariza_ac_fragment" />
+    <fragment
+        android:id="@+id/arizaListesiFragment"
+        android:name="com.example.deneme.ui.arizalistesi.ArizaListesiFragment"
+        android:label="ariza_listesi_fragment"
+        tools:layout="@layout/ariza_listesi_fragment" />
+</navigation>
