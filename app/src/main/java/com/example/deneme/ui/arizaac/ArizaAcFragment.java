@@ -1,7 +1,12 @@
 package com.example.deneme.ui.arizaac;
 
+import static androidx.core.content.ContextCompat.getSystemService;
+
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -17,9 +22,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.deneme.MakinaListesi;
 import com.example.deneme.R;
+import com.example.deneme.entity.Makine;
+import com.example.deneme.ui.anasayfa.AnaSayfaFragment;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -31,6 +40,7 @@ import java.util.Locale;
 
 public class ArizaAcFragment extends Fragment {
 
+
     private ArizaAcViewModel mViewModel;
     private Spinner personelListesi;
     private Spinner oncelik;
@@ -38,6 +48,8 @@ public class ArizaAcFragment extends Fragment {
     private EditText txttarih;
     private EditText txtsaat;
     private ImageView btnimg;
+    private TextView lblmakine;
+    public static Makine makine = new Makine();
     public static ArizaAcFragment newInstance() {
         return new ArizaAcFragment();
     }
@@ -53,10 +65,23 @@ public class ArizaAcFragment extends Fragment {
         txttarih = view.findViewById(R.id.txttarih);
         txtsaat = view.findViewById(R.id.txtsaat);
         btnimg = view.findViewById(R.id.btnimagesearch);
+        lblmakine = view.findViewById(R.id.lblmakinasec);
+
+        getParentFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                if (getView()!=null){
+                    getView().setFocusableInTouchMode(true);
+                    getView().requestFocus();
+                    sayfaYenilendi();
+                }
+
+            }
+        });
         btnimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SelectMakina();
+                AnaSayfaFragmentOpen();
             }
         });
         List<String> plist = new ArrayList<String>();
@@ -85,7 +110,7 @@ public class ArizaAcFragment extends Fragment {
         txttarih.setText(currentDate);
         String currentTime = new SimpleDateFormat("hh:mm", Locale.getDefault()).format(new Date());
         txtsaat.setText(currentTime);
-
+        lblmakine.setText(makine.getAd());
         return view;
     }
 
@@ -96,8 +121,18 @@ public class ArizaAcFragment extends Fragment {
         // TODO: Use the ViewModel
     }
 
+
+    private void sayfaYenilendi(){
+        Toast.makeText(this.getContext(), "SaYFA YENİLENDİ", Toast.LENGTH_SHORT).show();
+    }
+
     private void SelectMakina(){
         Intent intent = new Intent(this.getContext(), MakinaListesi.class);
         startActivity(intent);
     }
+
+     private void AnaSayfaFragmentOpen(){
+
+    }
+
 }

@@ -17,6 +17,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.deneme.entity.Makine;
+import com.example.deneme.ui.arizaac.ArizaAcFragment;
+import com.example.deneme.utility.StaticValues;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +32,7 @@ public class MakinaListesi extends AppCompatActivity {
 
     private ListView makinelistesi;
     List<String> mkl = new ArrayList<>();
+    List<Makine> makineList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,20 +54,13 @@ public class MakinaListesi extends AppCompatActivity {
     }
 
     private void clickItem(int position){
-        List<String> mkl1 = new ArrayList<>();
-        mkl1.add("Casper");
-        mkl1.add("LG");
-        mkl1.add("Lenovo");
-        mkl1.add("Asus");
-        ArrayAdapter<String> veriAdaptoru=new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, android.R.id.text1, mkl1);
-        makinelistesi.setAdapter(veriAdaptoru);
-        Toast.makeText(this, "Bildirim..:"+ mkl.get(position), Toast.LENGTH_SHORT).show();
-    }
+        GetAllById(position);
+
+     }
 
     private void GetAllUsers(){
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="https://randomuser.me/api/?results=20";
+        String url ="http://172.20.10.3:9090/makine/findbyid?id=0";
 
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -72,17 +69,68 @@ public class MakinaListesi extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         try {
-                            JSONObject jlist = new JSONObject(response);
-                            JSONArray array = jlist.getJSONArray("results");
+
+                            JSONArray array = new JSONArray(response);
                            for (int i=0;i<array.length();i++){
                                JSONObject object = array.getJSONObject(i);
-                               String email = object.getString("email");
-                               mkl.add(email);
+                               String ad = object.getString("ad");
+                               long id = object.getLong("id");
+                               long parentid = object.getLong("parentid");
+                               makineList.add(new Makine(id,ad,parentid));
+                               mkl.add(ad);
                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                        islemyap();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("İSTEK SONUCU..: ", "onResponse: "+ error.toString());
+            }
+        });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
+    }
+
+    private void GetAllById(int position){
+        long id = makineList.get(position).getId();
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url ="http://172.20.10.3:9090/makine/findbyid?id="+id;
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        try {
+
+                            JSONArray array = new JSONArray(response);
+                            if(array.length()>0){
+                                makineList.clear();
+                                mkl.clear();
+                                for (int i=0;i<array.length();i++){
+                                    JSONObject object = array.getJSONObject(i);
+                                    String ad = object.getString("ad");
+                                    long id = object.getLong("id");
+                                    long parentid = object.getLong("parentid");
+                                    makineList.add(new Makine(id,ad,parentid));
+                                    mkl.add(ad);
+                                }
+                                islemyap();
+                            }else{
+                                setMakine(position);
+                            }
+
+                        } catch (JSONException e) {
+                            Log.d("TAG", "onResponse: "+e.toString());
+                            e.printStackTrace();
+                        }
+
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -102,4 +150,11 @@ public class MakinaListesi extends AppCompatActivity {
 
         makinelistesi.setAdapter(veriAdaptoru);
     }
+
+    private void setMakine(int position){
+        Makine makine = makineList.get(position);
+        ArizaAcFragment.makine = makine;
+
+    }
+
 }

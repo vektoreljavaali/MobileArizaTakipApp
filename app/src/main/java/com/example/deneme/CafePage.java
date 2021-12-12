@@ -36,6 +36,8 @@ public class CafePage extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -62,4 +64,6 @@ public class CafePage extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }
