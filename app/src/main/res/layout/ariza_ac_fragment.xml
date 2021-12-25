@@ -8,18 +8,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_light"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_margin="10dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
             <TextView
-                android:textStyle="bold"
-                android:text="Personel Seçiniz..."
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Personel Seçiniz..."
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/personelist"
@@ -28,101 +30,134 @@
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_margin="10dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
             <TextView
-                android:textAlignment="textEnd"
                 android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="2"
                 android:text="Tarih - Saat     "
-                android:layout_height="48dp"/>
+                android:textAlignment="textEnd" />
+
             <EditText
                 android:id="@+id/txttarih"
-                android:hint="Tarih"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:height="48dp"
 
-                android:height="48dp" />
+                android:hint="Tarih"
+                android:textColor="@color/design_default_color_error" />
+
             <EditText
                 android:id="@+id/txtsaat"
-                android:hint="Saat"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:height="48dp" />
+                android:layout_weight="1"
+                android:height="48dp"
+                android:hint="Saat"
+                android:textColor="@color/design_default_color_error" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_margin="10dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
             <TextView
-                android:textStyle="bold"
-                android:text="Bildirim Şekli Seçiniz..."
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Bildirim Şekli Seçiniz..."
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/bildirimturu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                 />
+                android:minHeight="48dp" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
             <EditText
                 android:id="@+id/txtarizatanimi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="48dp"
-                android:hint="ariza tanımı giriniz."/>
+                android:hint="ariza tanımı giriniz."
+                android:textColor="@color/design_default_color_error"
+                android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_margin="10dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
             <TextView
-                android:textStyle="bold"
-                android:text="Öncelik Seçiniz"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Öncelik Seçiniz"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/oncelik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                />
+                android:minHeight="48dp" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_margin="10dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
             <TextView
 
-                android:gravity="center_vertical"
                 android:id="@+id/lblmakinasec"
-                android:hint="Arızalı Makineyi Seçiniz"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:layout_weight="8"/>
+                android:layout_weight="8"
+                android:gravity="center_vertical"
+                android:hint="Arızalı Makineyi Seçiniz"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/btnimagesearch"
-                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
+                android:layout_weight="2"
                 android:src="@mipmap/arizaac_search">
 
             </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/btnarizabildir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/button"
+                android:text="K A Y D E T"
+                android:textSize="18dp" />
         </LinearLayout>
     </LinearLayout>
 

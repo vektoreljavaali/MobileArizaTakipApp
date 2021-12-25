@@ -60,7 +60,7 @@ public class MakinaListesi extends AppCompatActivity {
 
     private void GetAllUsers(){
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://172.20.10.3:9090/makine/findbyid?id=0";
+        String url ="http://"+StaticValues.URL+":9090/makine/findbyid?id=0";
 
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -99,7 +99,7 @@ public class MakinaListesi extends AppCompatActivity {
     private void GetAllById(int position){
         long id = makineList.get(position).getId();
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://172.20.10.3:9090/makine/findbyid?id="+id;
+        String url ="http://"+StaticValues.URL+":9090/makine/findbyid?id="+id;
 
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -154,7 +154,7 @@ public class MakinaListesi extends AppCompatActivity {
     private void setMakine(int position){
         Makine makine = makineList.get(position);
         ArizaAcFragment.makine = makine;
-
+        this.finish();
     }
 
 }
