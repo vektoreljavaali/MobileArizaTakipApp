@@ -3,13 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <LinearLayout
+    android:layout_margin="5dp"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+
+    android:layout_height="150dp">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="2"
+        android:gravity="center_vertical"
         android:layout_height="match_parent">
         <ImageView
             android:src="@mipmap/bildirimler_ariza"
@@ -26,12 +29,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="Bildiren: "
+                android:text="Bildiren      : "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/arizalistbildiren"
                 android:text="Ahmet Bilmene"
+                android:textColor="#404040"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -39,12 +43,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="Arıza Türü: "
+                android:text="Arıza Türü : "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/arizalisttur"
                 android:text="Arıza Bildirim"
+                android:textColor="#404040"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -52,25 +57,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="Öncelik: "
+                android:text="Öncelik      : "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/arizalistoncelik"
                 android:text="Acil"
+                android:textColor="#404040"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
+            android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
         <TextView
-            android:text="Açıklama: "
+            android:text="Açıklama   : "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/arizalistaciklama"
-            android:text="Pc arızası oldu"
+            android:text="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+            android:textColor="#404040"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -78,26 +86,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="Tarih Saat: "
+                android:text="Tarih Saat : "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/arizalisttarihsaat"
                 android:text="12-12-2021 21:44"
+                android:textColor="#404040"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="2"
         android:layout_width="0dp"
-        android:layout_height="match_parent">
+        android:gravity="center_vertical"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
         <Button
             android:id="@+id/arizalistbtncoz"
-            android:text="ÇÖZ"
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:text="ÇÖZ" />
     </LinearLayout>
 
 </LinearLayout>

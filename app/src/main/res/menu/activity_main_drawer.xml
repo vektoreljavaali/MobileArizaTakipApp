@@ -24,6 +24,10 @@
             android:id="@+id/cihazListesiFragment"
             android:icon="@drawable/solmenu_arizalistesi"
             android:title="@string/solmenu_cihazlistesi" />
+        <item
+            android:id="@+id/sayacTakipFragment"
+            android:icon="@drawable/solmenu_arizalistesi"
+            android:title="Sayaç Takip" />
 
     </group>
 </menu>

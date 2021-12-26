@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SayacTakipFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sayacKaydet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/txtaktif"
+            android:layout_width="152dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Eri 5.5.0"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txttoplam" />
+
+        <EditText
+            android:id="@+id/txtkapasitif"
+            android:layout_width="152dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Krc 8.8.0"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtaktif" />
+
+        <Button
+            android:id="@+id/btnkaydet"
+            android:layout_width="117dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="40dp"
+            android:text="KAYDET"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtkapasitif" />
+
+        <EditText
+            android:id="@+id/txttoplam"
+            android:layout_width="152dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Top 1.8.0"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.895"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txttoplamilk"
+            android:layout_width="152dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Top 1.8.0"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/txtaktifilk"
+            android:layout_width="152dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Eri 5.5.0"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txttoplam" />
+
+        <EditText
+            android:id="@+id/txtkapasitifilk"
+            android:layout_width="152dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Krc 8.8.0"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtaktif" />
+
+        <EditText
+            android:id="@+id/txtenduktiffark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Fark %"
+            app:layout_constraintEnd_toStartOf="@+id/textView14"
+            app:layout_constraintHorizontal_bias="0.582"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <EditText
+            android:id="@+id/txtkapasitiffark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Fark %"
+            app:layout_constraintEnd_toStartOf="@+id/textView15"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="76dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="52dp"
+            android:text="Endüktif"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.116"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnkaydet" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="79dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="44dp"
+            android:text="Kapasitif"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtenduktifuyari" />
+
+        <TextView
+            android:id="@+id/txtkapasitifuyari"
+            android:layout_width="364dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="24dp"
+            android:text="%5 fark limit içinde normal!"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtkapasitiffark"
+            app:layout_constraintVertical_bias="0.071" />
+
+        <TextView
+            android:id="@+id/txtenduktifuyari"
+            android:layout_width="364dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="20dp"
+            android:text="%52 fark limit dışında anormal!"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.549"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtenduktiffark" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="126dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="36dp"
+            android:text="Limit:%33"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnkaydet" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="126dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="36dp"
+            android:text="Limit:%20"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtenduktifuyari" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="İlk Endex"
+            app:layout_constraintBottom_toTopOf="@+id/txttoplamilk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.682" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:text="Son Endex"
+            app:layout_constraintBottom_toTopOf="@+id/txttoplam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.682" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

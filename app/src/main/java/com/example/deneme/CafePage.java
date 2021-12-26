@@ -43,7 +43,7 @@ public class CafePage extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.anaSayfaFragment, R.id.arizaAcFragment2, R.id.arizaListesiFragment,R.id.cihazTanimlamaFragment,R.id.cihazListesiFragment)
+                R.id.anaSayfaFragment, R.id.arizaAcFragment2, R.id.arizaListesiFragment,R.id.cihazTanimlamaFragment,R.id.cihazListesiFragment,R.id.sayacTakipFragment)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_cafe_page);

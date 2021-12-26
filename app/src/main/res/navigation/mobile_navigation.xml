@@ -30,4 +30,9 @@
         android:name="com.example.deneme.ui.arizalistesi.ArizaListesiFragment"
         android:label="ariza_listesi_fragment"
         tools:layout="@layout/ariza_listesi_fragment" />
+    <fragment
+        android:id="@+id/sayacTakipFragment"
+        android:name="com.example.deneme.ui.SayacTakipFragment"
+        android:label="fragment_sayac_takip"
+        tools:layout="@layout/fragment_sayac_takip" />
 </navigation>
